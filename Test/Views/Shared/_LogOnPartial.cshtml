@@ -1,0 +1,12 @@
+﻿@if(Request.IsAuthenticated) {
+    <text>Welcome <strong>@User.Identity.Name</strong>!
+        [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+    using (Html.BeginForm("MakeMeAdmin", "Account", FormMethod.Post))
+    {
+         <input type="submit" value="Make me admin !" />
+    }
+}
+else
+{
+    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+}
